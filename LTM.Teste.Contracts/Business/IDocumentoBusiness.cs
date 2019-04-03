@@ -11,7 +11,6 @@ namespace LTM.Teste.Contracts.Business
     public interface IDocumentoBusiness
     {
         void Salvar(DocumentoContractModel documento);
-
         List<DocumentoContractModel> Listar();
         DocumentoContractModel Obter(int Id);
 

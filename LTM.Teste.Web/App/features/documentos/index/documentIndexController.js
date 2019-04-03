@@ -20,6 +20,14 @@
         documentoService.downloadDocumento(idDocumentoArquivo, downloadDocumentoSucesso, downloadDocumentoErro);
     }
 
+    function downloadDocumentoSucesso() {
+       
+    };
+
+    function downloadDocumentoErro() {
+        growl.error("Ocorreu um erro ao fazer o download do documento selecionado!");
+    };
+
     function ListarDocumentosSucesso(data) {
         $scope.documentos = data;
         $scope.dataLoading = false;

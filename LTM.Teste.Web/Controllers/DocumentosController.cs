@@ -61,11 +61,12 @@ namespace LTM.Teste.Web.Controllers
         [Route("api/DocumentoArquivo/{id:int}")]
         public async Task<IHttpActionResult> GetDocumentoArquivo(int id)
         {
-            //var result = new HttpResponseMessage(HttpStatusCode.OK);
-
             try
             {
-                var arquivo = documentoBusiness.Obter(id).Arquivo;
+                var documento = documentoBusiness.Obter(id);
+                documento.DataUltimoAcesso = DateTime.Now;
+
+                var arquivo = documento.Arquivo;
                 var dataBytes = Convert.FromBase64String(arquivo);
 
                 var result = new HttpResponseMessage(HttpStatusCode.OK) { Content = new ByteArrayContent(dataBytes) };

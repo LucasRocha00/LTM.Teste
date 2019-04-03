@@ -51,6 +51,9 @@ namespace LTM.Teste.Business
         {
             var documento = documentoRepository.Obter(Id);
 
+            documento = Documento.AlterarDataUltimoAcesso(documento);
+            documentoRepository.Salvar(documento);
+
             return new DocumentoContractModel
             {
                 Id = documento.Id,
@@ -65,7 +68,7 @@ namespace LTM.Teste.Business
 
         public void Salvar(DocumentoContractModel documentoCM)
         {
-            Documento documento = Documento.Create(documentoCM.Nome, documentoCM.Usuario, documentoCM.Arquivo);
+            Documento documento = Documento.Criar(documentoCM.Nome, documentoCM.Usuario, documentoCM.Arquivo);
             documentoRepository.Salvar(documento);
         }
     }

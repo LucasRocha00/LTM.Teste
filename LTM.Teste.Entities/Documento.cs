@@ -14,7 +14,7 @@ namespace LTM.Teste.Entities
         public decimal TamanhoArquivo { get; private set; }
         public string Arquivo { get; private set; }
 
-        public static Documento Create(string Nome, string Usuario, string Arquivo)
+        public static Documento Criar(string Nome, string Usuario, string Arquivo)
         {
             if (string.IsNullOrEmpty(Nome))
                 throw new Exception("Nome deve ser preenchido!");
@@ -32,6 +32,13 @@ namespace LTM.Teste.Entities
             documento.DataUpload = DateTime.Now;
             documento.DataUltimoAcesso = DateTime.Now;
             documento.TamanhoArquivo = Convert.FromBase64String(Arquivo).Length;
+
+            return documento;
+        }
+
+        public static Documento AlterarDataUltimoAcesso(Documento documento)
+        {
+            documento.DataUltimoAcesso = DateTime.Now;
 
             return documento;
         }

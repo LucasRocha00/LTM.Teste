@@ -45,7 +45,8 @@ namespace LTM.Teste.Repository.Features
 
         public void Salvar(Documento documento)
         {
-            documentManagerContext.Documento.Add(documento);
+            if(documento.Id == 0)
+                documentManagerContext.Documento.Add(documento);
             documentManagerContext.SaveChanges();
         }
     }
