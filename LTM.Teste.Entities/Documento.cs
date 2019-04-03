@@ -16,6 +16,15 @@ namespace LTM.Teste.Entities
 
         public static Documento Create(string Nome, string Usuario, string Arquivo)
         {
+            if (string.IsNullOrEmpty(Nome))
+                throw new Exception("Nome deve ser preenchido!");
+
+            if (string.IsNullOrEmpty(Nome))
+                throw new Exception("Usuario deve ser preenchido!");
+
+            if (string.IsNullOrEmpty(Nome))
+                throw new Exception("Arquivo é obrigatório!");
+
             Documento documento = new Documento();
             documento.Nome = Nome;
             documento.Usuario = Usuario;

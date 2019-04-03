@@ -6,7 +6,7 @@
     function init() {
         if (sessionStorage.usuarioLogado == null)
             $location.path('/login')
-
+        $scope.dataLoading = true;
         documentoService.listar(ListarDocumentosSucesso, ListarDocumentosErro);
         
         vm.exibirBotaoNovo = sessionStorage.usuarioAdmin;
@@ -20,19 +20,15 @@
         documentoService.downloadDocumento(idDocumentoArquivo, downloadDocumentoSucesso, downloadDocumentoErro);
     }
 
-    function downloadDocumentoSucesso() {
-        alert('sucesso!');
-    };
-
-    function downloadDocumentoErro() {
-        alert('erro!');
-    };
-
     function ListarDocumentosSucesso(data) {
         $scope.documentos = data;
+        $scope.dataLoading = false;
     }
 
-    function ListarDocumentosErro() { growl.error("Ocorreu um erro ao listar os documentos!"); }
+    function ListarDocumentosErro() {
+        growl.error("Ocorreu um erro ao listar os documentos!");
+        $scope.dataLoading = false;
+    }
 
     $scope.abrirNovo = function () {
         $location.path('document/novo')

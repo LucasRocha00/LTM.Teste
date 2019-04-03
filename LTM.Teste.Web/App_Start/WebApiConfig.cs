@@ -1,4 +1,5 @@
-﻿using LTM.Teste.Business;
+﻿using log4net.Config;
+using LTM.Teste.Business;
 using LTM.Teste.Contracts.Business;
 using LTM.Teste.Contracts.Repository;
 using LTM.Teste.Repository.Features;
@@ -32,6 +33,8 @@ namespace LTM.Teste.Web
             container.RegisterType<IDocumentoBusiness, DocumentoBusiness>(new HierarchicalLifetimeManager());
             container.RegisterType<IDocumentoRepository, DocumentoRepository>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new UnityConfig(container);
+
+            XmlConfigurator.Configure();
         }
     }
 }
