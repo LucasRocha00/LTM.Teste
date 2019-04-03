@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTM.Teste.WebApi", "LTM.Teste.WebApi\LTM.Teste.WebApi.csproj", "{33FA21BF-919F-4064-9E1A-860678D0EEDF}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{7086D129-B7FB-4178-9B27-1E51C9A611E1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Business", "3 - Business", "{09A7B911-E8A1-45FA-A6F5-78B50E0E00F0}"
@@ -33,10 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{33FA21BF-919F-4064-9E1A-860678D0EEDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33FA21BF-919F-4064-9E1A-860678D0EEDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33FA21BF-919F-4064-9E1A-860678D0EEDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33FA21BF-919F-4064-9E1A-860678D0EEDF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{492F84BF-5223-4A83-A6AE-AD1357ECD9DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{492F84BF-5223-4A83-A6AE-AD1357ECD9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{492F84BF-5223-4A83-A6AE-AD1357ECD9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,7 +56,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{33FA21BF-919F-4064-9E1A-860678D0EEDF} = {7086D129-B7FB-4178-9B27-1E51C9A611E1}
 		{492F84BF-5223-4A83-A6AE-AD1357ECD9DC} = {C43F03C6-6BF6-4612-A19D-E0215B17A958}
 		{DE4F4238-A52D-411C-841A-1FD0A5C2028C} = {444D3FF8-2F9B-4B6C-BA7B-8E75E1629DC7}
 		{F320791B-9693-413D-A2AC-7ED51E975B69} = {09A7B911-E8A1-45FA-A6F5-78B50E0E00F0}

@@ -208,7 +208,6 @@
     <Content Include="App\features\login\loginController.js" />
     <Content Include="App\features\login\loginService.js" />
     <Content Include="App\index.html" />
-    <Content Include="App\index2.html" />
     <Content Include="App\route.js" />
     <Content Include="App\vendors\angular-cookies.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />

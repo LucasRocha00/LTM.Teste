@@ -1,6 +1,5 @@
 ﻿app.controller('loginController', function($scope, $location, loginService) {
 
-    // reset login status
     loginService.ClearCredentials();
 
     $scope.login = function () {
