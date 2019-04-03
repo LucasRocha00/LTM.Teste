@@ -11,7 +11,7 @@
             callBack: "=callBack",
             callBackError: "="
         },
-        controller: function ($scope, $element, $window) {
+        controller: function ($scope, $element, $window, growl) {
             var obj = new Object();
             $scope.required = $scope.required === "true" || $scope.required === true;
             $scope.model;
@@ -33,7 +33,7 @@
                     obj.Path = changeEvent.currentTarget.files[0].path;
 
                     if (obj.Type != "application/pdf") {
-                        alert("nao suportado");
+                        growl.warning("Selecione um arquivo PDF válido!");
                         return;
                     }
 
