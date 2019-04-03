@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html ng-app="app" ng-controller="mainController">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="pt-br" />
+    <title>Teste LTM - Gerenciador de Documentos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+    <script src="http://rawgit.com/JanStevens/angular-growl-2/master/build/angular-growl.js"></script>
+    <link rel="stylesheet" href="http://rawgit.com/JanStevens/angular-growl-2/master/build/angular-growl.css" />
+    <link rel="stylesheet" ; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+    <script src="//code.angularjs.org/1.4.0/angular-cookies.js"></script>
+
+    <script src="app.js"></script>
+    <script src="features\documentos\index\documentIndexController.js"></script>
+    <script src="features\documentos\cadastro\documentFormController.js"></script>
+    <script src="features/login/loginController.js"></script>
+    <script src="features/login/loginService.js"></script>
+    <script src="features\documentos\documentoService.js"></script>
+    <script src="features\dashboard\dashboardController.js"></script>
+    <script src="directives/docUpload/docUpload.js"></script>
+    <script src="route.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container" ng-show="Autenticado">
+            <ul class="nav navbar-nav" >
+                <li><a href="#/dashboard"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                <li><a href="#/document"><span class="glyphicon glyphicon-file"></span>Documentos</a></li>
+            </ul>
+            <div class="logoutButton pull-right"><a ng-click="deslogar()">Logout</a><!--<a href="#/login">Logout</a>--><!--<a href="#/login">Logout</a>--></div>
+        </div>
+    </nav>
+    <div growl></div>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-xs-offset-2 col-xs-8">
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center"></footer>
+</body>
+</html>

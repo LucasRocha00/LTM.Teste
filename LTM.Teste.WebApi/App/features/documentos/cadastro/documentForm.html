@@ -1,0 +1,50 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-header m-b-20">
+                <h3>Cadastro de Documentos</h3>
+            </div>
+            <div class="card-body">
+                <form class="form" autocomplete="off">
+                    <div class="row m-b-10">
+                        <div class="col-lg-6">
+                            <label class="col-lg-3 col-form-label form-control-label">Nome</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" ng-model="documento.nome">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-b-10">
+                        <div class="col-lg-6">
+                            <label class="col-lg-3 col-form-label form-control-label">Autor</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" ng-model="documento.usuario" ng-disabled="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-b-10">
+                        <div class="col-lg-6">
+                            <label class="col-lg-3 col-form-label form-control-label">Documento</label>
+                            <div class="col-lg-9">
+                                <!--<input type="file" ng-model="documento.documento">-->
+                                <!--<input type="file" fileread="documento.documento" />-->
+                                <!--<input type="file" select-ng-files ng-model="documento.documento" multiple>-->
+                               <ltm-Docupload ng-model="documento.arquivo"></ltm-Docupload>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <label class="col-lg-3 col-form-label form-control-label"></label>
+                        <div class="col-lg-9">
+                            <button class="btn btn-warning" ng-click="voltar()">Voltar</button>
+                            <button class="btn btn-success" ng-click="salvar()">Salvar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

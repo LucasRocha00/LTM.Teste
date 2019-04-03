@@ -1,0 +1,16 @@
+﻿[hidden] {
+    display: none !important;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.logoutButton {
+    padding-top: 15px;
+    padding-bottom: 15px
+}

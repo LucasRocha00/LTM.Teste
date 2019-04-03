@@ -1,0 +1,63 @@
+﻿<div class="container">
+    <div class="row">
+            <div class="card">
+                <div class="card-header m-b-20">
+                    <h3>Consulta de Documentos</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="pull-right">
+                                <button class="btn btn-primary" ng-click="abrirNovo()">Novo&nbsp;<i class="glyphicon glyphicon-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    ID
+                                </th>
+
+                                <th>
+                                    PageName
+                                </th>
+
+                                <th>
+                                    PageUrl
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="documento in documentos">
+                                <td>{{documento.Usuario}}</td>
+                                <td>{{documento.DataUpload}}</td>
+                                <td>{{documento.Autor}}</td>
+                            </tr>
+                        </tbody>
+                        </table>-->
+
+                        <table ng-table="vm.tableParams" class="table" show-filter="true">
+                            <tr ng-repeat="documento in documentos">
+                                <td title="'Nome'" filter="{ Nome: 'text'}" sortable="'Nome'">
+                                    {{documento.Nome}}
+                                </td>
+                                <td title="'Usuario'" filter="{ Usuario: 'text'}" sortable="'Usuario'">
+                                    {{documento.Usuario}}
+                                </td>
+                                <td title="'Tamanho'" filter="{ Tamanho: 'text'}" sortable="'Tamanho'">
+                                    {{documento.TamanhoArquivo / 1024|number:4}} Kbytes
+                                </td>
+                                <td title="'Data Importação'" filter="{ DataUpload: 'text'}" sortable="'DataUpload'">
+                                    {{documento.DataUpload | date:'dd/MM/yyyy  hh:mm:ss'}}
+                                </td>
+                                <td title="'Data Último Acesso'" filter="{ DataUltimoAcesso: 'text'}" sortable="'DataUltimoAcesso'">
+                                    {{documento.DataUltimoAcesso | date:'dd/MM/yyyy hh:mm:ss'}}
+                                </td>
+                                <td><button class="btn btn-default" ng-click="downloadFile(documento.Id)">Download&nbsp;<i class="glyphicon glyphicon-download"></i></button></td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+    </div>
+</div>
