@@ -27,30 +27,34 @@ namespace LTM.Teste.Web.Controllers
 
         //GET: api/Documentos
         [HttpGet]
-        public List<DocumentoContractModel> Get()
+        public HttpResponseMessage Get(HttpRequestMessage request)
         {
             try
             {
-                return documentoBusiness.Listar();
+                var documentos = documentoBusiness.Listar();
+                return request.CreateResponse(HttpStatusCode.OK, documentos);
+                //return documentoBusiness.Listar();
             }
             catch (Exception ex)
             {
                 this.log.Error("Falha - documentoBusiness.Listar :", ex);
-                return null;
+                return request.CreateResponse(HttpStatusCode.InternalServerError);
             }
         }
 
         // POST: api/Documentos
         [HttpPost]
-        public void Post([FromBody] DocumentoContractModel documento)
+        public HttpResponseMessage Post(HttpRequestMessage request, [FromBody] DocumentoContractModel documento)
         {
             try
             {
                 documentoBusiness.Salvar(documento);
+                return request.CreateResponse(HttpStatusCode.OK);
             }
             catch (Exception ex)
             {
                 this.log.Error("Falha - documentoBusiness.Salvar :", ex);
+                return request.CreateResponse(HttpStatusCode.InternalServerError);
             }
         }
 
